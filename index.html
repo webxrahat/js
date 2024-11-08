@@ -11,11 +11,21 @@
         <section class="container">
             <h1 id="header" class="header">To-Do App</h1>
 
-            <form class="new-task-container box">
+            <div class="new-task-container box">
                 <label for="new-task">Add New Task</label>
                 <input type="text" id="new-task" />
-                <input type="submit" id="addTask" value="Add Task" />
-            </form>
+                <input
+                    type="submit"
+                    id="addTask"
+                    value="Add Task"
+                    onclick="get_vaue()"
+                />
+            </div>
+
+            <!-- <form>
+                <input type="text" />
+                <button type="submit">add</button>
+            </form> -->
 
             <div class="todo-list box">
                 <h2>Incomplete Tasks</h2>
@@ -45,6 +55,6 @@
             <!--/complete-list-->
         </section>
         <!--/container-->
-        <script src="script.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
