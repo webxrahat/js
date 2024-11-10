@@ -31,7 +31,14 @@ let addTask = function (e) {
 };
 
 let addBtn = document.getElementById("btn");
-let todoContainer = document.getElementsByClassName("div-container");
+let todoContainer = document.getElementById("todo");
 let inputField = document.getElementById("text-field");
 
-console.log(addBtn, todoContainer, inputField);
+// console.log(addBtn, todoContainer, inputField);
+
+addBtn.addEventListener("click", () => {
+    // console.log("click");
+    let paragraph = document.createElement("p");
+    // console.log(paragraph);
+    todoContainer.appendChild(paragraph);
+});
