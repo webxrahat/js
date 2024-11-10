@@ -11,7 +11,7 @@
         <section class="container">
             <h1 id="header" class="header">To-Do App</h1>
 
-            <div class="new-task-container box">
+            <form class="new-task-container box">
                 <label for="new-task">Add New Task</label>
                 <input type="text" id="new-task" />
                 <input
@@ -20,14 +20,14 @@
                     value="Add Task"
                     onclick="get_vaue()"
                 />
-            </div>
+            </form>
 
             <!-- <form>
                 <input type="text" />
                 <button type="submit">add</button>
             </form> -->
 
-            <div class="todo-list box">
+            <d*++iv class="todo-list box">
                 <h2>Incomplete Tasks</h2>
                 <ul id="items">
                     <li class="item">
@@ -40,20 +40,26 @@
                         <input type="checkbox" /><label>Task Name</label>
                     </li>
                 </ul>
-            </div>
+            </d*++iv>
             <!--/todo-list-->
 
             <div class="complete-list box">
                 <h2>Completed Tasks</h2>
                 <ul>
                     <li class="item">
-                        Task Name <button class="delete">Delete</button> Task
-                        Name <button class="delete">Delete</button>
+                        Task Name <button class="delete">Delete</button>
                     </li>
                 </ul>
             </div>
             <!--/complete-list-->
         </section>
+
+        <div>
+            <input type="text" id="text-field" />
+            <button id="btn">Add Item</button>
+            <div class="div-container"></div>
+        </div>
+
         <!--/container-->
         <script src="main.js"></script>
     </body>
