@@ -41,4 +41,6 @@ addBtn.addEventListener("click", () => {
     let paragraph = document.createElement("p");
     // console.log(paragraph);
     todoContainer.appendChild(paragraph);
+    todoContainer.innerText = inputField.value;
+    inputField.value = "";
 });
