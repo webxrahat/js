@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-export const SetCount = ({ count, setCount }) => {
+export const SetCount = () => {
+    const [count, setCount] = useState(0);
     function getClick() {
         const increase = count + 1;
         return setCount(increase);
