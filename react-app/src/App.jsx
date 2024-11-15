@@ -1,12 +1,9 @@
 import "./App.css";
 import { SetCount } from "./components/SetCount";
+import Home from "./layout/Home";
 
 function App() {
-    return (
-        <>
-            <SetCount />
-        </>
-    );
+    return <>{/* <Home /> */}</>;
 }
 
 export default App;
