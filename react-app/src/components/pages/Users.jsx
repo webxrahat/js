@@ -3,7 +3,8 @@ import { useLoaderData } from "react-router-dom";
 
 export const Users = () => {
     const data = useLoaderData();
+    const { name } = data;
     console.log(data);
 
-    return <div>Users</div>;
+    return <div>User name: {name}</div>;
 };
