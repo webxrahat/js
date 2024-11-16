@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./layout/Home.jsx";
+import Home from "./components/pages/Home.jsx";
 import { Root } from "./layout/Root.jsx";
 import { About } from "./components/pages/About.jsx";
 
