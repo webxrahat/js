@@ -1,10 +1,24 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { UserTable } from "./UserTable";
 
 export const Users = () => {
-    const data = useLoaderData();
-    const { name } = data;
-    console.log(data);
+    const datas = useLoaderData();
+    // const { name } = data;
+    // console.log(name);
 
-    return <div>User name: {name}</div>;
+    return (
+        <div
+            style={{
+                display: "grid",
+                gridTemplateColumns: "25% 25% 25% 25%",
+                gap: "20px",
+                margin: "20px 0",
+            }}
+        >
+            {datas.map((user) => (
+                <UserTable key={user.id} user={user} />
+            ))}
+        </div>
+    );
 };
