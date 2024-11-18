@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const UserTable = ({ user }) => {
     // console.log(data);
+    const navigate = useNavigate();
 
     const handleShowDtails = () => {
-        console.log("click");
+        // console.log("click");
+        navigate(`/users/${user.id}`);
     };
 
     const { name, phone } = user;
