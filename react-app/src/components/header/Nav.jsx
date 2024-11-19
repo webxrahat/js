@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "./header.css";
 // import logo from "../assets/logo.jpg";
 
 export const Nav = () => {
@@ -8,10 +9,10 @@ export const Nav = () => {
             <div>
                 <img src="" alt="img" />
             </div>
-            <div>
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/users">Users</Link>
+            <div className="nav">
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/about">About</NavLink>
+                <NavLink to="/users">Users</NavLink>
             </div>
         </div>
     );
