@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Form = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // console.log("click");
+    };
+    const nameData = name;
+
+    // console.log(name);
+    // console.log(email);
+
     return (
         <form className="mb-4">
             <div className="mb-3">
@@ -12,6 +24,7 @@ const Form = () => {
                     className="form-control"
                     id="name"
                     name="name"
+                    onChange={(e) => setName(e.target.value)}
                 />
             </div>
             <div className="mb-3">
@@ -23,9 +36,14 @@ const Form = () => {
                     className="form-control"
                     id="email"
                     name="email"
+                    onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button
+                onClick={handleSubmit}
+                type="submit"
+                className="btn btn-primary"
+            >
                 Submit
             </button>
         </form>
