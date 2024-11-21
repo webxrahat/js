@@ -13,6 +13,7 @@ export const Nav = () => {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/about">About</NavLink>
                 <NavLink to="/users">Users</NavLink>
+                <NavLink to="/phone">Phone</NavLink>
             </div>
         </div>
     );

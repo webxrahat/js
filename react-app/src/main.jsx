@@ -9,6 +9,7 @@ import { Root } from "./layout/Root.jsx";
 import { About } from "./components/pages/About.jsx";
 import { Users } from "./components/pages/Users.jsx";
 import { SingleUser } from "./components/pages/SingleUser.jsx";
+import Phone from "./components/pages/Phone.jsx";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
                         `https://jsonplaceholder.typicode.com/users/${params.id}`
                     ),
                 element: <SingleUser />,
+            },
+            {
+                path: "/phone",
+                loader: () => fetch("http://127.0.0.1:5000/phone"),
+                element: <Phone />,
             },
         ],
     },
