@@ -1,8 +1,10 @@
 const express = require("express");
 const phones = require("../server/phones.json");
 const app = express();
+const cors = require("cors");
 const port = 5000;
 
+app.use(cors());
 // console.log(phones);
 
 app.get("/", (req, res) => {
