@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "model": "iPhone 15 Pro",
+        "edition": "256GB",
+        "price": 1199,
+        "image_url": "https://example.com/images/iphone15pro.jpg"
+    },
+    {
+        "id": 2,
+        "model": "Samsung Galaxy S23 Ultra",
+        "edition": "512GB",
+        "price": 1399,
+        "image_url": "https://example.com/images/galaxys23ultra.jpg"
+    },
+    {
+        "id": 3,
+        "model": "Google Pixel 8",
+        "edition": "128GB",
+        "price": 899,
+        "image_url": "https://example.com/images/pixel8.jpg"
+    },
+    {
+        "id": 4,
+        "model": "OnePlus 11",
+        "edition": "8GB RAM/128GB",
+        "price": 699,
+        "image_url": "https://example.com/images/oneplus11.jpg"
+    },
+    {
+        "id": 5,
+        "model": "Xiaomi 13 Pro",
+        "edition": "12GB RAM/256GB",
+        "price": 1099,
+        "image_url": "https://example.com/images/xiaomi13pro.jpg"
+    },
+    {
+        "id": 6,
+        "model": "Sony Xperia 1 V",
+        "edition": "256GB",
+        "price": 1299,
+        "image_url": "https://example.com/images/xperia1v.jpg"
+    },
+    {
+        "id": 7,
+        "model": "Asus ROG Phone 7",
+        "edition": "16GB RAM/512GB",
+        "price": 999,
+        "image_url": "https://example.com/images/rogphone7.jpg"
+    },
+    {
+        "id": 8,
+        "model": "Motorola Edge 40",
+        "edition": "8GB RAM/128GB",
+        "price": 599,
+        "image_url": "https://example.com/images/edge40.jpg"
+    },
+    {
+        "id": 9,
+        "model": "Vivo X90 Pro",
+        "edition": "12GB RAM/256GB",
+        "price": 1199,
+        "image_url": "https://example.com/images/vivox90pro.jpg"
+    },
+    {
+        "id": 10,
+        "model": "Oppo Find X6 Pro",
+        "edition": "16GB RAM/512GB",
+        "price": 1249,
+        "image_url": "https://example.com/images/findx6pro.jpg"
+    },
+    {
+        "id": 11,
+        "model": "Huawei P60 Pro",
+        "edition": "8GB RAM/256GB",
+        "price": 999,
+        "image_url": "https://example.com/images/p60pro.jpg"
+    },
+    {
+        "id": 12,
+        "model": "Realme GT 3",
+        "edition": "16GB RAM/1TB",
+        "price": 799,
+        "image_url": "https://example.com/images/gt3.jpg"
+    },
+    {
+        "id": 13,
+        "model": "Honor Magic 5 Pro",
+        "edition": "12GB RAM/512GB",
+        "price": 1149,
+        "image_url": "https://example.com/images/magic5pro.jpg"
+    },
+    {
+        "id": 14,
+        "model": "Lenovo Legion Y90",
+        "edition": "18GB RAM/512GB",
+        "price": 899,
+        "image_url": "https://example.com/images/legiony90.jpg"
+    },
+    {
+        "id": 15,
+        "model": "Nokia X30",
+        "edition": "8GB RAM/128GB",
+        "price": 549,
+        "image_url": "https://example.com/images/x30.jpg"
+    },
+    {
+        "id": 16,
+        "model": "Tecno Phantom X2",
+        "edition": "8GB RAM/256GB",
+        "price": 699,
+        "image_url": "https://example.com/images/phantomx2.jpg"
+    },
+    {
+        "id": 17,
+        "model": "Infinix Zero Ultra",
+        "edition": "8GB RAM/256GB",
+        "price": 499,
+        "image_url": "https://example.com/images/zeroultra.jpg"
+    },
+    {
+        "id": 18,
+        "model": "ZTE Axon 40 Ultra",
+        "edition": "12GB RAM/256GB",
+        "price": 899,
+        "image_url": "https://example.com/images/axon40ultra.jpg"
+    },
+    {
+        "id": 19,
+        "model": "Meizu 20 Pro",
+        "edition": "12GB RAM/256GB",
+        "price": 849,
+        "image_url": "https://example.com/images/meizu20pro.jpg"
+    },
+    {
+        "id": 20,
+        "model": "Fairphone 5",
+        "edition": "8GB RAM/256GB",
+        "price": 699,
+        "image_url": "https://example.com/images/fairphone5.jpg"
+    }
+]
