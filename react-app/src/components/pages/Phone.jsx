@@ -1,11 +1,17 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import {
+    Link,
+    useLoaderData,
+    useNavigate,
+    useNavigation,
+} from "react-router-dom";
 
 const Phone = () => {
     const datas = useLoaderData();
 
     // onst { id, model, price, image_url } = data;c
-    console.log(datas);
+    // console.log(datas);
+    const navigation = useNavigation();
 
     return (
         <div>
@@ -20,7 +26,7 @@ const Phone = () => {
                     <p>{d.id}</p>
                     <p>{d.model}</p>
                     <p>{d.price}</p>
-                    <button>Show</button>
+                    <Link to={`/phone/${d.id}`}>Show</Link>
                 </div>
             ))}
         </div>
