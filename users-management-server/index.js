@@ -11,7 +11,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/users", (req, res) => {
+    // console.log("api hiting");
+
     res.send(users);
+});
+
+app.post("/users", (req, res) => {
+    console.log("api hiting");
+
+    console.log(req.send);
 });
 
 app.listen(port, () => {
