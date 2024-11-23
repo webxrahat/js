@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
     const [Users, setUsers] = useState([]);
 
-    console.log(Users);
+    // console.log(Users);
 
     useEffect(() => {
         fetch("http://localhost:5000/users")
