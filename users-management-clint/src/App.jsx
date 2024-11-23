@@ -4,6 +4,8 @@ import "./App.css";
 function App() {
     const [Users, setUsers] = useState([]);
 
+    console.log(Users);
+
     useEffect(() => {
         fetch("http://localhost:5000/users")
             .then((res) => res.json())
@@ -13,9 +15,9 @@ function App() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = e.target;
-        const nameData = formData.name.value;
-        const emailData = formData.email.value;
-        const userData = { nameData, emailData };
+        const name = formData.name.value;
+        const email = formData.email.value;
+        const userData = { name, email };
         // console.log(userData);
 
         fetch("http://localhost:5000/users", {
@@ -26,7 +28,12 @@ function App() {
             body: JSON.stringify(userData),
         })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+                const newUser = [...Users, data];
+                setUsers(newUser);
+                formData.reset();
+                // console.log(data)
+            });
     };
 
     return (

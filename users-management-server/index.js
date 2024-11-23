@@ -5,6 +5,7 @@ const users = require("../users-management-server/users.json");
 const port = process.env.port || 5000;
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send("This server is runing on 5000 port");
@@ -17,9 +18,14 @@ app.get("/users", (req, res) => {
 });
 
 app.post("/users", (req, res) => {
-    console.log("api hiting");
+    // console.log("api hiting");
 
-    console.log(req.send);
+    const userId = req.body;
+    userId.id = users.length + 1;
+    users.push(userId);
+    res.send(userId);
+
+    // console.log(userId);
 });
 
 app.listen(port, () => {
