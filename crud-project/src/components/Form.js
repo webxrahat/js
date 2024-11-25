@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 
 const Form = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [users, setUsers] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log("click");
-    };
-    const nameData = name;
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const formData = { name, email };
 
-    // console.log(name);
-    // console.log(email);
+        fetch("http://localhost:5000/users", {
+            method: POST,
+        });
+
+        const reset = form.reset();
+
+        if (!reset) {
+            alert("This Form is Success fully submit");
+        }
+
+        // console.log(formData);
+    };
 
     return (
-        <form className="mb-4">
+        <form className="mb-4" onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                     Name
@@ -24,7 +34,6 @@ const Form = () => {
                     className="form-control"
                     id="name"
                     name="name"
-                    onChange={(e) => setName(e.target.value)}
                 />
             </div>
             <div className="mb-3">
@@ -36,14 +45,9 @@ const Form = () => {
                     className="form-control"
                     id="email"
                     name="email"
-                    onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
-            <button
-                onClick={handleSubmit}
-                type="submit"
-                className="btn btn-primary"
-            >
+            <button type="submit" className="btn btn-primary">
                 Submit
             </button>
         </form>
