@@ -23,29 +23,30 @@ const Table = () => {
                         <th>Actions</th>
                     </tr>
                 </thead>
-                {users.map((user) => (
-                    <tbody key={user.id}>
-                        <tr>
-                            <td>{user.id}</td>
-                            <td>{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>
-                                <button className="btn btn-warning btn-sm me-2">
-                                    Edit
-                                </button>
-                                <button className="btn btn-danger btn-sm">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
+                {users &&
+                    users.map((user) => (
+                        <tbody key={user.id}>
+                            <tr>
+                                <td>{user.id}</td>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>
+                                    <button className="btn btn-warning btn-sm me-2">
+                                        Edit
+                                    </button>
+                                    <button className="btn btn-danger btn-sm">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td colSpan="4" className="text-center">
-                                No Data
-                            </td>
-                        </tr>
-                    </tbody>
-                ))}
+                            <tr>
+                                <td colSpan="4" className="text-center">
+                                    No Data
+                                </td>
+                            </tr>
+                        </tbody>
+                    ))}
             </table>
         </>
     );

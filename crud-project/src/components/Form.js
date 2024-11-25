@@ -11,14 +11,23 @@ const Form = () => {
         const formData = { name, email };
 
         fetch("http://localhost:5000/users", {
-            method: POST,
-        });
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                const newUser = [...users, data];
+                setUsers(newUser);
+                const reset = form.reset();
 
-        const reset = form.reset();
-
-        if (!reset) {
-            alert("This Form is Success fully submit");
-        }
+                if (!reset) {
+                    alert("This Form is Success fully submit");
+                }
+                // console.log(data)
+            });
 
         // console.log(formData);
     };

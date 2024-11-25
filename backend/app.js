@@ -15,6 +15,15 @@ app.get("/users", (req, res) => {
     res.send(users);
 });
 
+app.post("/users", (req, res) => {
+    // console.log("api hiting");
+    const newId = req.body;
+    newId.id = users.length + 1;
+    users.push(newId);
+
+    res.send(newId);
+});
+
 app.listen(port, () => {
     console.log(`database is runing on this port: ${port}`);
 });
