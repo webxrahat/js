@@ -8,7 +8,17 @@ function App() {
         const email = form.email.value;
         const formData = { name, email };
 
-        console.log(formData);
+        fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+
+        // console.log(formData);
     };
 
     return (
