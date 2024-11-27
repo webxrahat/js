@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const users = require("../backend/users.json");
+const users = require("./users.json");
 const port = process.env.port || 5000;
 const cors = require("cors");
 const { MongoClient } = require("mongodb");

@@ -1,5 +1,5 @@
 const express = require("express");
-const phones = require("../server/phones.json");
+const phones = require("./phones.json");
 const app = express();
 const cors = require("cors");
 const port = 5000;
