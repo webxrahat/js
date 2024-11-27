@@ -3,7 +3,7 @@ const app = express();
 const users = require("../backend/users.json");
 const port = process.env.port || 5000;
 const cors = require("cors");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient } = require("mongodb");
 
 app.use(cors());
 app.use(express.json());
@@ -12,19 +12,23 @@ const uri =
     "mongodb+srv://roko:loQ5G6777kHMYW4C@cluster0.jhexa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-    serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
-    },
-});
+const client = new MongoClient(uri);
 
 async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
         // Send a ping to confirm a successful connection
+
+        const database = client.db("usersDB");
+        const userCollection = database.collection("users");
+        app.get("/users", async (req, res) => {
+            const user = req.body;
+            console.log(user);
+            const result = await userCollection.insertOne(user);
+            res.send(result);
+        });
+
         await client.db("admin").command({ ping: 1 });
         console.log(
             "Pinged your deployment. You successfully connected to MongoDB!"
