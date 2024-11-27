@@ -16,7 +16,13 @@ function App() {
             body: JSON.stringify(formData),
         })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+                if (data.insertedId) {
+                    alert("Your form is successfully added");
+                    form.reset();
+                }
+                console.log(data);
+            });
 
         // console.log(formData);
     };

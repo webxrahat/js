@@ -30,7 +30,7 @@ async function run() {
             const newUser = await req.body;
             const result = await userCollection.insertOne(newUser);
             res.send(result);
-            console.log(result);
+            // console.log(result);
         });
 
         console.log(
