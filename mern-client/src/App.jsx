@@ -21,7 +21,7 @@ function App() {
                     alert("Your form is successfully added");
                     form.reset();
                 }
-                console.log(data);
+                // console.log(data);
             });
 
         // console.log(formData);
