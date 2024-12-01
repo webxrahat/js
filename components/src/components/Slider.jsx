@@ -28,7 +28,7 @@ export default function Slider() {
  };
 
  const ref = useRef();
- console.log(ref);
+ console.log(ref.current);
 
  const photos = [
   {
