@@ -20,7 +20,11 @@ export default function Slider() {
  };
  const SwiperButtonPre = ({ children }) => {
   const swiper = useSwiper();
-  return <button onClick={() => swiper.slidePrev()}>{children}</button>;
+  return (
+   <button className="bg-gray-700" onClick={() => swiper.slidePrev()}>
+    {children}
+   </button>
+  );
  };
 
  const ref = useRef();
