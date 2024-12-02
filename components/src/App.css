@@ -1,3 +1,7 @@
 .rest {
-    display: flex;
+ display: flex;
+}
+
+.bu {
+ color: black;
 }

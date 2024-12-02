@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
+import "./slide.css";
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
@@ -23,10 +25,10 @@ export default function Slider() {
  //   return <button onClick={() => swiper.slidePrev()}>{children}</button>;
  //  };
  const SlideRef = useRef();
+ //  console.log(SlideRef);
 
  const handleNext = () => {
   SlideRef.current.swiper.slideNext();
-  // console.log(SlideRef.current.swiper);
  };
 
  const handlePrev = () => {
@@ -61,13 +63,15 @@ export default function Slider() {
     loop={true}
     pagination={{
      clickable: true,
+     renderBullet: (index, className) => {
+      return `<span class="${className} custom-bullet"></span>`;
+     },
     }}
-    // navigation={true}
     modules={[Pagination, Autoplay]}
     className="mySwiper"
    >
-    {photos.map((photo) => (
-     <SwiperSlide className="bg-yellow-200">
+    {photos.map((photo, index) => (
+     <SwiperSlide key={index} className="bg-yellow-200">
       <img src={photo.img} alt="1" className="w-full h-[600px] object-cover" />
      </SwiperSlide>
     ))}
