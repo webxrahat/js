@@ -11,9 +11,9 @@ import "./slide.css";
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import img1 from "../../photos/drone.webp";
-import img2 from "../../photos/earpod.jpeg";
-import img3 from "../../photos/bluepen.webp";
+import img1 from "../../photos/img-1.jpg";
+import img2 from "../../photos/img-2.jpg";
+import img3 from "../../photos/img-3.jpg";
 
 export default function Slider() {
  //  const SwiperButtonNext = ({ children }) => {
@@ -49,8 +49,15 @@ export default function Slider() {
 
  return (
   <>
-   <button onClick={handlePrev}>pre</button>
-   <button onClick={handleNext}>next</button>
+   <button
+    className="bg-yellow-400 px-5 py-1 rounded-xl m-2"
+    onClick={handlePrev}
+   >
+    pre
+   </button>
+   <button className="bg-green-400 px-5 py-1 rounded-xl" onClick={handleNext}>
+    next
+   </button>
    <div></div>
    <Swiper
     navigation={false}
