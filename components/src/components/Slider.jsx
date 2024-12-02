@@ -57,9 +57,7 @@ export default function Slider() {
     loop={true}
     pagination={{
      clickable: true,
-     renderBullet: (index, className) => {
-      return `<span class="${className} custom-bullet"></span>`;
-     },
+     bulletActiveClass: "custom-bullet-active",
     }}
     modules={[Pagination, Autoplay]}
     className="mySwiper"

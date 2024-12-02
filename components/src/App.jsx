@@ -13,7 +13,7 @@ export default function App() {
     </div>
    </div>
 
-   <div className="max-w-sm mx-auto mt-20">
+   <div className="max-w-sm mx-auto my-20">
     <CubeSlide />
    </div>
   </div>
