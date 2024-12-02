@@ -1,6 +1,6 @@
 /* Custom styles for pagination bullets */
 .swiper-pagination-bullet {
- background-color: #fffb03 !important; /* Default bullet color */
+ background-color: #fffb03 !important;
  width: 12px;
  height: 12px;
  margin: 0 5px;
@@ -10,7 +10,7 @@
 }
 
 .swiper-pagination-bullet-active {
- background-color: #f6f62b !important; /* Active bullet color */
+ background-color: #f6f62b !important;
  transform: scale(1.2);
  opacity: 1;
 }

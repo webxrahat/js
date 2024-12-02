@@ -2,11 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
 import "./slide.css";
 
 // import required modules
@@ -16,14 +11,6 @@ import img2 from "../../photos/img-2.jpg";
 import img3 from "../../photos/img-3.jpg";
 
 export default function Slider() {
- //  const SwiperButtonNext = ({ children }) => {
- //   const swiper = useSwiper();
- //   return <button onClick={() => swiper.slideNext()}>{children}</button>;
- //  };
- //  const SwiperButtonPre = ({ children }) => {
- //   const swiper = useSwiper();
- //   return <button onClick={() => swiper.slidePrev()}>{children}</button>;
- //  };
  const SlideRef = useRef();
  //  console.log(SlideRef);
 
