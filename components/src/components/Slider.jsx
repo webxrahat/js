@@ -14,21 +14,24 @@ import img2 from "../../photos/earpod.jpeg";
 import img3 from "../../photos/bluepen.webp";
 
 export default function Slider() {
- const SwiperButtonNext = ({ children }) => {
-  const swiper = useSwiper();
-  return <button onClick={() => swiper.slideNext()}>{children}</button>;
- };
- const SwiperButtonPre = ({ children }) => {
-  const swiper = useSwiper();
-  return (
-   <button className="bg-gray-700" onClick={() => swiper.slidePrev()}>
-    {children}
-   </button>
-  );
+ //  const SwiperButtonNext = ({ children }) => {
+ //   const swiper = useSwiper();
+ //   return <button onClick={() => swiper.slideNext()}>{children}</button>;
+ //  };
+ //  const SwiperButtonPre = ({ children }) => {
+ //   const swiper = useSwiper();
+ //   return <button onClick={() => swiper.slidePrev()}>{children}</button>;
+ //  };
+ const SlideRef = useRef();
+
+ const handleNext = () => {
+  SlideRef.current.swiper.slideNext();
+  // console.log(SlideRef.current.swiper);
  };
 
- const ref = useRef();
- console.log(ref.current);
+ const handlePrev = () => {
+  SlideRef.current.swiper.slidePrev();
+ };
 
  const photos = [
   {
@@ -44,12 +47,16 @@ export default function Slider() {
 
  return (
   <>
+   <button onClick={handlePrev}>pre</button>
+   <button onClick={handleNext}>next</button>
    <div></div>
    <Swiper
+    navigation={false}
     autoplay={{
-     delay: 2000,
+     delay: 5000,
      disableOnInteraction: false,
     }}
+    ref={SlideRef}
     slidesPerView={1}
     loop={true}
     pagination={{
@@ -57,10 +64,8 @@ export default function Slider() {
     }}
     // navigation={true}
     modules={[Pagination, Autoplay]}
-    // className="mySwiper"
+    className="mySwiper"
    >
-    <SwiperButtonNext>Next Slide</SwiperButtonNext>
-    <SwiperButtonPre>Pre Slide</SwiperButtonPre>
     {photos.map((photo) => (
      <SwiperSlide className="bg-yellow-200">
       <img src={photo.img} alt="1" className="w-full h-[600px] object-cover" />
