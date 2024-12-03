@@ -42,7 +42,7 @@ const CubeSlide = () => {
     className="mySwiper"
    >
     {photos.map((photo, index) => (
-     <SwiperSlide key={index} className="bg-yellow-200">
+     <SwiperSlide key={index} className="bg-yellow-200 mt-40">
       <img src={photo.img} alt="1" className="w-full h-[300px] " />
      </SwiperSlide>
     ))}
