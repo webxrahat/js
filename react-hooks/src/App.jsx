@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+ const [favorite, setFavorite] = useState({
+  model: "F-1",
+  car: "BMW",
+  color: "Chery",
+ });
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+ const { car, model, color } = favorite;
+ //  console.log(favorite);
+
+ //  let col = "Black";
+
+ const handleColorChange = () => {
+  setFavorite((prev) => {
+   console.log(prev);
+
+   return { ...prev, color: "black" };
+  });
+ };
+
+ //  console.log(color);
+
+ return (
+  <>
+   <h2>
+    This is my favorite Car: {car}, Model: {model} , Color: {color}
+   </h2>
+   <button onClick={handleColorChange}>Color change</button>
+   <button>Change Car</button>
+   <button>Change Model</button>
+  </>
+ );
 }
 
-export default App
+export default App;
