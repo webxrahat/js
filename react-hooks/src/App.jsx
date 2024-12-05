@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -14,24 +14,43 @@ function App() {
 
  //  let col = "Black";
 
+ const handleCarChange = () => {
+  setFavorite((prev) => {
+   //  console.log(prev);
+
+   return { ...prev, car: "Range Rovar" };
+  });
+ };
+ const handleModelChange = () => {
+  setFavorite((prev) => {
+   //  console.log(prev);
+
+   return { ...prev, model: "R-1" };
+  });
+ };
  const handleColorChange = () => {
   setFavorite((prev) => {
-   console.log(prev);
+   //  console.log(prev);
 
    return { ...prev, color: "black" };
   });
  };
 
  //  console.log(color);
+ const [count, setCount] = useState(0);
+ useEffect(() => {
+  // setCount(count);
+ });
 
  return (
   <>
+   <p>{count}</p>
    <h2>
     This is my favorite Car: {car}, Model: {model} , Color: {color}
    </h2>
    <button onClick={handleColorChange}>Color change</button>
-   <button>Change Car</button>
-   <button>Change Model</button>
+   <button onClick={handleCarChange}>Change Car</button>
+   <button onClick={handleModelChange}>Change Model</button>
   </>
  );
 }
