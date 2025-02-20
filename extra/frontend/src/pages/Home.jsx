@@ -1,17 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
+import { Bounce, ToastContainer, toast } from "react-toastify";
 
 const Home = () => {
- //  const [inpValue, setInpValue] = useState("");
+ const [inpValue, setInpValue] = useState("");
 
  const handleSubmit = (e) => {
   e.preventDefault();
   const formValue = e.target;
-  const toDo = formValue.name.value;
+  const name = formValue.name.value;
+  // console.log({ name });
 
-  console.log(toDo);
+  fetch("http://localhost:5000/users", {
+   method: "POST",
+   headers: {
+    "content-Type": "application/json",
+   },
+   body: JSON.stringify({ name }),
+  })
+   .then((res) => res.json())
+   .then((data) => {
+    if (data.acknowledged) {
+     toast.success("Wow successfully submited !");
+
+     formValue.reset();
+    }
+    // console.log(data);
+   });
  };
+
+ useEffect(() => {
+  fetch("http://localhost:5000/users")
+   .then((res) => res.json())
+   .then((data) => {
+    // console.log(data);
+
+    setInpValue(data);
+   })
+   .catch(console.error("fetch to faild"));
+ }, []);
+
+ //  console.log(inpValue);
 
  return (
   <div>
@@ -26,23 +56,41 @@ const Home = () => {
      </button>
     </form>
    </div>
-
    {/* {This is list view section} */}
+   <ToastContainer
+    position="top-right"
+    autoClose={1000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick={false}
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+    transition={Bounce}
+   />
 
    <div className="max-w-2xl mx-auto">
-    <div className="flex justify-between items-center shadow-xl p-3">
-     <div>
-      <p>This is the Title</p>
-     </div>
-     <div className="flex items-center">
-      <button className="cursor-pointer bg-amber-200 p-2">
-       <FaRegEdit />
-      </button>
-      <button className="cursor-pointer bg-red-400 p-2 ml-2">
-       <MdDeleteForever />
-      </button>
-     </div>
-    </div>
+    {inpValue &&
+     inpValue.map((inp, idx) => (
+      <div
+       key={idx}
+       className="flex justify-between items-center shadow-xl p-3"
+      >
+       <div>
+        <p>{inp.name}</p>
+       </div>
+       <div className="flex items-center">
+        <button className="cursor-pointer bg-amber-200 p-2">
+         <FaRegEdit />
+        </button>
+        <button className="cursor-pointer bg-red-400 p-2 ml-2">
+         <MdDeleteForever />
+        </button>
+       </div>
+      </div>
+     ))}
    </div>
   </div>
  );
