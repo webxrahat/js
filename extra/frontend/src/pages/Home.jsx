@@ -10,24 +10,30 @@ const Home = () => {
   e.preventDefault();
   const formValue = e.target;
   const name = formValue.name.value;
+  // console.log(formValue.name.value !== "");
+
   // console.log({ name });
+  // let num = 1;
+  if (formValue.name.value !== "") {
+   fetch("http://localhost:5000/users", {
+    method: "POST",
+    headers: {
+     "content-Type": "application/json",
+    },
+    body: JSON.stringify({ name }),
+   })
+    .then((res) => res.json())
+    .then((data) => {
+     if (data.acknowledged) {
+      toast.success("Wow successfully submited !");
 
-  fetch("http://localhost:5000/users", {
-   method: "POST",
-   headers: {
-    "content-Type": "application/json",
-   },
-   body: JSON.stringify({ name }),
-  })
-   .then((res) => res.json())
-   .then((data) => {
-    if (data.acknowledged) {
-     toast.success("Wow successfully submited !");
-
-     formValue.reset();
-    }
-    // console.log(data);
-   });
+      formValue.reset();
+     }
+     //  console.log(data);
+    });
+  } else {
+   toast.warning("please provide a valid input");
+  }
  };
 
  useEffect(() => {
@@ -59,7 +65,7 @@ const Home = () => {
    {/* {This is list view section} */}
    <ToastContainer
     position="top-right"
-    autoClose={1000}
+    autoClose={3000}
     hideProgressBar={false}
     newestOnTop={false}
     closeOnClick={false}
