@@ -16,3 +16,17 @@
 // }
 // console.log(check(4));
 // console.log(check(1));
+
+// 2. Convert a given number to a string without using .toString().
+
+// concatanation
+// const givenNum = 5;
+// const convert = givenNum + "5";
+// console.log(convert);
+
+// console.log(typeof convert);
+
+// string constrator
+// const givenNum = 5;
+// const convert = String(givenNum);
+// console.log(typeof convert);
